@@ -17,7 +17,7 @@ class CreateKelurahanTable extends Migration
             $table->increments('id');
             $table->string('nama');
             $table->integer('id_kecamatan')->unsigned()->nullable();
-            $table->foreign('id_kecamatan')->references('id')->on('kecamatan')->onDelete('cascade')->onUpdate('cascade');
+            $table->foreign('id_kecamatan')->references('id')->on('kecamatan')->onDelete('cascade');
             $table->boolean('is_verified')->default(1);
             $table->timestamp('inserted_at')->useCurrent();
             $table->string('inserted_by');

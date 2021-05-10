@@ -16,10 +16,10 @@ class CreateProgramDonaturTable extends Migration
         Schema::create('program_donatur', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('id_program')->unsigned()->nullable();
-            $table->foreign('id_program')->references('id')->on('program')->onDelete('cascade')->onUpdate('cascade');
+            $table->foreign('id_program')->references('id')->on('program')->onDelete('cascade');
             $table->integer('nominal_donasi');
             $table->integer('id_rekening')->unsigned()->nullable();
-            $table->foreign('id_rekening')->references('id')->on('rekening')->onDelete('cascade')->onUpdate('cascade');
+            $table->foreign('id_rekening')->references('id')->on('rekening')->onDelete('cascade');
             $table->string('nama_pengirim');
             $table->string('nomor_rekening_pengirim');
             $table->string('atas_nama');

@@ -16,9 +16,9 @@ class CreateProgramFundraiser extends Migration
         Schema::create('program_fundraiser', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('id_program')->unsigned()->nullable();
-            $table->foreign('id_program')->references('id')->on('program')->onDelete('cascade')->onUpdate('cascade');
+            $table->foreign('id_program')->references('id')->on('program')->onDelete('cascade');
             $table->integer('id_user')->unsigned()->nullable();
-            $table->foreign('id_user')->references('id')->on('users')->onDelete('cascade')->onUpdate('cascade');
+            $table->foreign('id_user')->references('id')->on('users')->onDelete('cascade');
             $table->timestamp('inserted_at')->useCurrent();
             $table->string('inserted_by');
             $table->timestamp('edited_at')->default(DB::raw('NULL ON UPDATE CURRENT_TIMESTAMP'))->nullable();

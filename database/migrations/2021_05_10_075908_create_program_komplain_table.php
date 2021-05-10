@@ -16,7 +16,7 @@ class CreateProgramKomplainTable extends Migration
         Schema::create('program_komplain', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('id_program')->unsigned()->nullable();
-            $table->foreign('id_program')->references('id')->on('program')->onDelete('cascade')->onUpdate('cascade');
+            $table->foreign('id_program')->references('id')->on('program')->onDelete('cascade');
             $table->mediumText('complain');
             $table->mediumText('response');
             $table->timestamp('inserted_at')->useCurrent();

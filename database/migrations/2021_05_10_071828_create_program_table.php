@@ -16,7 +16,7 @@ class CreateProgramTable extends Migration
         Schema::create('program', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('id_user')->unsigned()->nullable();
-            $table->foreign('id_user')->references('id')->on('users')->onDelete('cascade')->onUpdate('cascade');
+            $table->foreign('id_user')->references('id')->on('users')->onDelete('cascade');
             $table->string('nama_program');
             $table->longText('info');
             $table->integer('target');

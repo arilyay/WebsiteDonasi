@@ -16,7 +16,7 @@ class CreateProgramBeritaTable extends Migration
         Schema::create('program_berita', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('id_program')->unsigned()->nullable();
-            $table->foreign('id_program')->references('id')->on('program')->onDelete('cascade')->onUpdate('cascade');
+            $table->foreign('id_program')->references('id')->on('program')->onDelete('cascade');
             $table->text('judul');
             $table->longText('konten');
             $table->boolean('is_active')->default(1);

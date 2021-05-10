@@ -17,7 +17,7 @@ class CreateKabupatenTable extends Migration
             $table->increments('id');
             $table->string('nama');
             $table->integer('id_provinsi')->unsigned()->nullable();
-            $table->foreign('id_provinsi')->references('id')->on('provinsi')->onDelete('cascade')->onUpdate('cascade');
+            $table->foreign('id_provinsi')->references('id')->on('provinsi')->onDelete('cascade');
             $table->boolean('is_verified')->default(1);
             $table->timestamp('inserted_at')->useCurrent();
             $table->string('inserted_by');

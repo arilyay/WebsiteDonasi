@@ -16,7 +16,7 @@ class CreateRekeningTable extends Migration
         Schema::create('rekening', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('id_vendor')->unsigned()->nullable();
-            $table->foreign('id_vendor')->references('id')->on('ref_vendor_saving')->onDelete('cascade')->onUpdate('cascade');
+            $table->foreign('id_vendor')->references('id')->on('ref_vendor_saving')->onDelete('cascade');
             $table->string('nama_rekening');
             $table->string('nomor_rekening');
             $table->boolean('is_active')->default(1);

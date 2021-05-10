@@ -17,7 +17,7 @@ class CreateKecamatanTable extends Migration
             $table->increments('id');
             $table->string('nama');
             $table->integer('id_kabupaten')->unsigned()->nullable();
-            $table->foreign('id_kabupaten')->references('id')->on('kabupaten')->onDelete('cascade')->onUpdate('cascade');
+            $table->foreign('id_kabupaten')->references('id')->on('kabupaten')->onDelete('cascade');
             $table->boolean('is_verified')->default(1);
             $table->timestamp('inserted_at')->useCurrent();
             $table->string('inserted_by');
